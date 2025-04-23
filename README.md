@@ -36,6 +36,25 @@ Auto CIDR Management | ❌ No            | ✅ Yes
 Avoid IP Conflicts   | ❌ Manual effort | ✅ Automatic
 Multi-region/Account Scaling | ❌ Hard  | ✅ Easy
 
+Tenancy:
+In AWS VPC (Virtual Private Cloud), tenancy refers to how EC2 instances are hosted on the underlying hardware. 
+It mainly controls whether your instances share hardware with other AWS customers or use dedicated hardware.
+
+Types of Tenancy in VPC:
+Tenancy Type	Description
+Default	Instances run on shared hardware. This is the most cost-effective option.
+Dedicated	Instances run on dedicated hardware—that is, servers that are physically isolated for your use only.
+Host	You get complete control over a physical server. You can launch instances on this host as you need.
+
+ Real-Life Analogy: Hotel vs Private Villa
+Think of EC2 instances like rooms where your applications live.
+
+Tenancy Type	Analogy	Description
+Default	Hotel Room	You rent a room in a hotel (shared building). Others also stay in the same hotel. It’s cheaper, but not private.
+Dedicated	Private Floor in Hotel	You get an entire floor to yourself. Still in a hotel, but no other guests on your floor.
+Host	Private Villa	You own the whole villa (physical server). You control how many rooms (instances) you want inside. Fully private and customizable.
+
+
 
 
 
