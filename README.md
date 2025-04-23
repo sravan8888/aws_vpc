@@ -174,6 +174,22 @@ Target	The next hop (Internet Gateway, NAT, etc.)
 Main Route Table	Default one created by AWS
 Custom Route Table	You create and attach it manually
 
+ After creating the Route Table:
+You must associate the subnet with the route table to ensure the subnet uses that route (especially the route to the Internet Gateway).
+✅ Steps (via AWS Console):
+Go to the VPC Dashboard → Route Tables.
+Select your route table (e.g., PublicRouteTable).
+Click on the “Subnet Associations” tab.
+Click “Edit subnet associations”.
+Select the subnet(s) you want to associate (e.g., PublicSubnet).
+Click Save associations.
+📌 Why this step is important:
+Without this association, your subnet won't follow the custom route table and won’t have internet access, even if the route table has a 0.0.0.0/0 pointing to the IGW.
+This step binds the route table to the subnet.
+>>after creating the route table with 0.0.0.0/0 allow all to access with igw also you have to associate the subnets which are public for internet access. after associating the subnets only the web app in the internet have accessed 
+
+
+
 
 
 
