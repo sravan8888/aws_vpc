@@ -29,6 +29,12 @@ You are managing a single or few VPCs	✅ Manual Input
 You work in a large enterprise setup	✅ IPAM-allocated CIDR
 You want centralized IP tracking & automation	✅ IPAM
 
+Feature     | Manual Input               | IPAM-Allocated
+Setup Speed | ✅ Fast                   | ❌ Slower (needs pool setup)
+Ideal for   | Small setups, dev          | Large orgs, many VPCs
+Auto CIDR Management | ❌ No            | ✅ Yes
+Avoid IP Conflicts   | ❌ Manual effort | ✅ Automatic
+Multi-region/Account Scaling | ❌ Hard  | ✅ Easy
 
 
 
