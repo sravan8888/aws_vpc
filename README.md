@@ -134,6 +134,45 @@ Without an Internet Gateway, your EC2 instances inside your VPC can’t access t
 And people from the internet can’t access your EC2 instances.
 in simple internet gateway is used to provide connectivity for inbond and outbond traffic to external users
 
+ROute table:
+What is a Route Table in VPC?
+A Route Table in AWS VPC is like a map or a GPS for your network.
+It tells your VPC how to reach other networks — like the internet, another VPC, or a different subnet.
+📦 Where is it used?
+Each subnet in your VPC must be connected to a route table.
+This table decides where the traffic from that subnet should go.
+🛣️ What’s inside a Route Table?
+A route table contains a list of routes.
+Each route has 2 main parts:
+Destination – The network you want to reach (e.g., internet, another subnet).
+Target – Where to send the traffic (e.g., Internet Gateway, NAT Gateway, or a local route).
+🧠 Default Route Table
+When you create a VPC, AWS automatically creates a main route table.
+All subnets are linked to this main route table by default — unless you attach a custom one.
+🧭 Example
+Let’s say you have:
+A subnet with a web server
+An Internet Gateway attached to your VPC
+You want your server to access the internet.
+In the Route Table, you’ll need:
+
+kotlin
+Copy
+Edit
+Destination: 0.0.0.0/0     (this means "anywhere on the internet")
+Target:      igw-xxxxxxxx   (your Internet Gateway)
+This tells the VPC:
+“If the destination is anywhere on the internet, send traffic through the internet gateway.”
+🔐 Private vs Public Subnet (based on Route Table)
+Public Subnet → Has a route to the Internet Gateway.
+Private Subnet → Does not have a direct route to the Internet.
+
+🎯 Summary
+Route Table	Tells the VPC where to send traffic
+Destination	The place you want to go (IP range)
+Target	The next hop (Internet Gateway, NAT, etc.)
+Main Route Table	Default one created by AWS
+Custom Route Table	You create and attach it manually
 
 
 
