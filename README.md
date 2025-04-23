@@ -80,6 +80,85 @@ Check the logs to see if traffic is reaching the server.
 Notice the logs say "REJECT" for incoming requests.
 Realize the security group is missing port 80/443.
 Add the rule and the issue is fixed.
+>>>>>>>
+
+Subnets:- 
+What is a Subnet in VPC?
+A subnet (short for "subnetwork") is a range of IP addresses in your VPC. When you create a VPC, you define a CIDR block (like 10.0.0.0/16). Then, you divide this block into smaller pieces called subnets.
+Think of a VPC as a big plot of land, and subnets are rooms in a building inside that land. You control what happens in each room.
+> in simple terms we have a vpc that was created with cidr range of 10.0.0.0/16. we hold 65000+ ip's by using this cidr range then you divide this block into reuired smaller pieces called subnets.
+> 1. Organizing Resources
+You can separate your infrastructure logically:
+Public subnet for things that need internet access (like a web server).
+Private subnet for internal resources (like a database or application server).
+📌 Example:
+10.0.1.0/24 → Public subnet (web server)
+10.0.2.0/24 → Private subnet (database)
+> 2. Security Control
+Each subnet can be attached to different route tables, NACLs (Network ACLs), and security groups. This gives fine-grained control over what traffic can come in and go out.
+📌 Example:
+You can block internet access for private subnets by not associating them with an internet gateway.
+>3. High Availability (AZ-wise distribution)
+In AWS, each Availability Zone (AZ) is an isolated datacenter. You can create subnets in different AZs to make your system fault tolerant.
+📌 Example:
+Subnet A in us-east-1a
+Subnet B in us-east-1b
+Load balancer spreads traffic between both.
+4. Routing Control
+Each subnet can be associated with a different route table, which helps define where the traffic should go.
+Public subnet → Route table with internet gateway
+Private subnet → Route table with NAT gateway (for outgoing access only)
+
+Step-by-step Explanation to Define a Subnet IPv4 Block:
+🧠 First, Understand What a Subnet Is:
+A subnet is a smaller range of IP addresses inside your VPC.
+Your VPC block 10.0.0.0/16 gives you 65,536 IP addresses (from 10.0.0.0 to 10.0.255.255).
+You can divide this block into smaller subnets (for different Availability Zones, public/private purposes, etc.).
+
+ Example: Create 4 Subnets in 10.0.0.0/16
+
+Subnet Name	CIDR Block	IPs Available	Use Case
+Public Subnet 1	10.0.0.0/24	256 IPs	Public AZ-a
+Public Subnet 2	10.0.1.0/24	256 IPs	Public AZ-b
+Private Subnet 1	10.0.2.0/24	256 IPs	Private AZ-a
+Private Subnet 2	10.0.3.0/24	256 IPs	Private AZ-b
+Each /24 subnet gives 256 IPs, but AWS reserves 5, so you get 251 usable IPs per subnet.
+
+Internet Gateway:
+What is an Internet Gateway?
+Think of an Internet Gateway like the main door of your house (your VPC) that connects your house to the outside world (the internet).
+Without a door, you can't go outside.
+Without a door, people can't come into your house.
+Just like that:
+Without an Internet Gateway, your EC2 instances inside your VPC can’t access the internet.
+And people from the internet can’t access your EC2 instances.
+in simple internet gateway is used to provide connectivity for inbond and outbond traffic to external users
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
