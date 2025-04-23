@@ -54,6 +54,8 @@ Default	Hotel Room	You rent a room in a hotel (shared building). Others also sta
 Dedicated	Private Floor in Hotel	You get an entire floor to yourself. Still in a hotel, but no other guests on your floor.
 Host	Private Villa	You own the whole villa (physical server). You control how many rooms (instances) you want inside. Fully private and customizable.
 
+in simple words tenancy means if you need a dedicated server to host your instance go with dedicated or else you don't need specific hardware to host ec2 instance go with default
+
 
 
 
