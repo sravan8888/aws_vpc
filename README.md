@@ -56,7 +56,30 @@ Host	Private Villa	You own the whole villa (physical server). You control how ma
 
 in simple words tenancy means if you need a dedicated server to host your instance go with dedicated or else you don't need specific hardware to host ec2 instance go with default
 
+VPC FLow log:
+ What is a VPC Flow Log?
+A VPC Flow Log captures IP traffic going to and from network interfaces (ENIs) in your VPC. It records data like source/destination IPs, ports, protocol, traffic direction, and whether it was accepted or rejected.
 
+What Can You Use It For?
+Use Case	Explanation
+Security Analysis	Detect suspicious activity like port scanning or unauthorized access.
+Troubleshooting	Debug why a certain application or server is not reachable or performing poorly.
+Compliance/Auditing	Keep a record of network traffic for audits or compliance purposes.
+Network Monitoring	Monitor which IPs or services are communicating the most.
+
+Where Can You Store Flow Logs?
+You can send them to:
+CloudWatch Logs (for monitoring and alerting)
+S3 Bucket (for long-term storage and analysis)
+Kinesis Firehose (for real-time processing)
+
+Real-Life Example Use Case:
+You're running a web app in your VPC, and some users complain they can't access it. You:
+Enable Flow Logs on the subnet or ENI.
+Check the logs to see if traffic is reaching the server.
+Notice the logs say "REJECT" for incoming requests.
+Realize the security group is missing port 80/443.
+Add the rule and the issue is fixed.
 
 
 
