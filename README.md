@@ -22,8 +22,12 @@ Overlapping risk | You manage it yourself  | IPAM prevents overlap across region
 Best for   | Learning, small projects      | Enterprises, multi-account architecture
 Cost       | Free                          | IPAM might incur cost (depending on usage level)
 
-
-
+When to Use What?
+Scenario	Recommended CIDR Option
+You are learning or doing personal projects	✅ Manual Input
+You are managing a single or few VPCs	✅ Manual Input
+You work in a large enterprise setup	✅ IPAM-allocated CIDR
+You want centralized IP tracking & automation	✅ IPAM
 
 
 
