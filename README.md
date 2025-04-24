@@ -186,7 +186,17 @@ Click Save associations.
 📌 Why this step is important:
 Without this association, your subnet won't follow the custom route table and won’t have internet access, even if the route table has a 0.0.0.0/0 pointing to the IGW.
 This step binds the route table to the subnet.
->>after creating the route table with 0.0.0.0/0 allow all to access with igw also you have to associate the subnets which are public for internet access. after associating the subnets only the web app in the internet have accessed 
+>>after creating the route table with 0.0.0.0/0 allow all to access with igw also you have to associate the subnets which are public for internet access. after associating the subnets only the web app in the internet have accessed
+>>
+>>NAT gateway:
+ A NAT Gateway is used in a VPC to enable instances in a private subnet to access the internet.
+ The problem:
+Private subnets are designed to be isolated from the internet.
+But sometimes, resources (like EC2 instances) in those private subnets need outbound internet access – for example, to:
+Download software updates
+Pull code from a Git repository
+Access APIs on the internet
+If you give them a public IP, they are no longer "private" — and open to the internet. Not good for secure environments.
 
 
 
