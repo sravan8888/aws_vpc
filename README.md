@@ -197,6 +197,12 @@ Download software updates
 Pull code from a Git repository
 Access APIs on the internet
 If you give them a public IP, they are no longer "private" — and open to the internet. Not good for secure environments.
+>
+>A public NAT gateway enables instances in private subnets to connect to the internet but prevents them from receiving unsolicited inbound connections from the internet. You should associate an elastic IP address with a public NAT gateway and attach an internet gateway to the VPC containing it.
+
+A private NAT gateway enables instances in private subnets to connect to other VPCs or your on-premises network but prevents any unsolicited inbound connections from outside your VPC. You can route traffic from the NAT gateway through a transit gateway or a virtual private gateway.
+
+
 
 
 
