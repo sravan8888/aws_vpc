@@ -202,9 +202,9 @@ If you give them a public IP, they are no longer "private" — and open to the i
 
 A private NAT gateway enables instances in private subnets to connect to other VPCs or your on-premises network but prevents any unsolicited inbound connections from outside your VPC. You can route traffic from the NAT gateway through a transit gateway or a virtual private gateway.
 
-
-
-
+>VPC_Peering Connection
+A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering connection between your own VPCs, with a VPC in another AWS account, or with a VPC in a different AWS Region.
+>AWS uses the existing infrastructure of a VPC to create a VPC peering connection; it is neither a gateway nor an AWS Site-to-Site VPN connection, and does not rely on a separate piece of physical hardware. There is no single point of failure for communication or a bandwidth bottleneck.
 
 
 
