@@ -230,6 +230,7 @@ To connect different environments like production, staging, development VPCs.
 To allow private communication between different teams or different AWS accounts.
 For multi-region architectures needing private connectivity.
 
+>>>> as per my understanding 
 
 
 
